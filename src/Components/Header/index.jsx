@@ -1,7 +1,7 @@
 import * as s from './styles.jsx'
 import { BiWalk, BiUserPin } from 'react-icons/bi'
 import axios from 'axios'
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import AuthContext from '../../Contexts/Auth.context.jsx'
 import { Link, useNavigate } from 'react-router-dom'
 import { BiCommentDetail } from 'react-icons/bi'
@@ -19,7 +19,10 @@ export function Header() {
 		convites,
 	} = useContext(AuthContext)
 
-	setInterval(() => {
+	useEffect(()=>{
+		if(!token){
+			navigate('/sign-in')
+		}
 		axios({
 			method: 'put',
 			url: `${url}/statusLogin`,
@@ -35,7 +38,8 @@ export function Header() {
 				console.log(error)
 				navigate('/sign-in')
 			})
-	}, 10000)
+	})
+
 	setInterval(() => {
 		findConvites()
 	}, 50000)
