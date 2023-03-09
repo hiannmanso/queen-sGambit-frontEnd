@@ -816,9 +816,9 @@ export function Table() {
 		<s.TableComponent>
 			<s.Table>
 				{table ? (
-					// console.log(table)
+			
 					table.map((item, index) => {
-						console.log(item,index)
+				
 						if (cont >= 8 ) {
 							linePar = !linePar
 							cont = 0
