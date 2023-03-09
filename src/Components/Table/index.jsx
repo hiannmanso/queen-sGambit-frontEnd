@@ -823,7 +823,7 @@ export function Table() {
 						cont++
 						if (linePar) {
 						
-							if (table.length >= 66) {
+							if (table.length >= 65) {
 								table.pop()
 							}
 							if (index % 2 === 0) {
