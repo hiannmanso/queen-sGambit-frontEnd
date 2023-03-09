@@ -814,6 +814,7 @@ export function Table() {
 		<s.TableComponent>
 			<s.Table>
 				{table ? (
+					
 					table.map((item, index) => {
 						if (cont >= 8) {
 							linePar = !linePar
@@ -821,8 +822,8 @@ export function Table() {
 						}
 						cont++
 						if (linePar) {
-							// TA CRIANDO UM OBJETO A MAIS TODA VEZ Q EDITA
-							if (table.length >= 65) {
+						
+							if (table.length >= 66) {
 								table.pop()
 							}
 							if (index % 2 === 0) {
@@ -917,6 +918,7 @@ export function Table() {
 								)
 							}
 						}
+						
 					})
 				) : (
 					<h1>Loading</h1>
