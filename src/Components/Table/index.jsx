@@ -50,7 +50,9 @@ export function Table() {
 		h1: 'rook-white',
 	}
 	let cont = 0
+	let linesTable = 1
 	let linePar = true
+	
 
 	let infoClicks = ['', '']
 	let isFirstClick = true
@@ -814,113 +816,114 @@ export function Table() {
 		<s.TableComponent>
 			<s.Table>
 				{table ? (
-					
-					table.map((item, index) => {
-						console.log(item,index)
-						if (cont >= 8) {
-							linePar = !linePar
-							cont = 0
-						}
-						cont++
-						if (linePar) {
+					console.log(table)
+					// table.map((item, index) => {
+					// 	console.log(item,index)
+					// 	if (cont >= 8 ) {
+					// 		linePar = !linePar
+					// 		cont = 0
 						
-							if (table.length >= 65) {
-								table.pop()
-							}
-							if (index % 2 === 0) {
-								return (
-									<div
-										key={index}
-										className={`sq white`}
-										id={`${item.position}`}
-										onClick={() => {
-											movePiece(item)
-										}}
-									>
-										{item.contains ? (
-											<div
-												className={`piece ${item.contains} ${item.color}`}
-											></div>
-										) : (
-											<></>
-										)}
-									</div>
-								)
-							} else {
-								return (
-									<div
-										key={index}
-										className={`sq black`}
-										id={`${item.position}`}
-										onClick={() => {
-											movePiece(item)
-										}}
-									>
-										{/* <h1>
-											{item.column}
-											{item.line}
-										</h1> */}
-										{item.contains ? (
-											<div
-												className={`piece ${item.contains} ${item.color}`}
-											></div>
-										) : (
-											<></>
-										)}
-									</div>
-								)
-							}
-						} else {
-							if (index % 2 !== 0) {
-								return (
-									<div
-										key={index}
-										className={`sq white`}
-										id={`${item.position}`}
-										onClick={() => {
-											movePiece(item)
-										}}
-									>
-										{/* <h1>
-											{item.column}
-											{item.line}
-										</h1> */}
-										{item.contains ? (
-											<div
-												className={`piece ${item.contains} ${item.color}`}
-											></div>
-										) : (
-											<></>
-										)}
-									</div>
-								)
-							} else {
-								return (
-									<div
-										key={index}
-										className={`sq black`}
-										id={`${item.position}`}
-										onClick={() => {
-											movePiece(item)
-										}}
-									>
-										{/* <h1>
-											{item.column}
-											{item.line}
-										</h1> */}
-										{item.contains ? (
-											<div
-												className={`piece ${item.contains} ${item.color}`}
-											></div>
-										) : (
-											<></>
-										)}
-									</div>
-								)
-							}
-						}
+					// 	}
+					// 	cont++
+					// 	if (linePar) {
 						
-					})
+					// 		if (table.length >= 65) {
+					// 			table.pop()
+					// 		}
+					// 		if (index % 2 === 0) {
+					// 			return (
+					// 				<div
+					// 					key={index}
+					// 					className={`sq white`}
+					// 					id={`${item.position}`}
+					// 					onClick={() => {
+					// 						movePiece(item)
+					// 					}}
+					// 				>
+					// 					{item.contains ? (
+					// 						<div
+					// 							className={`piece ${item.contains} ${item.color}`}
+					// 						></div>
+					// 					) : (
+					// 						<></>
+					// 					)}
+					// 				</div>
+					// 			)
+					// 		} else {
+					// 			return (
+					// 				<div
+					// 					key={index}
+					// 					className={`sq black`}
+					// 					id={`${item.position}`}
+					// 					onClick={() => {
+					// 						movePiece(item)
+					// 					}}
+					// 				>
+					// 					{/* <h1>
+					// 						{item.column}
+					// 						{item.line}
+					// 					</h1> */}
+					// 					{item.contains ? (
+					// 						<div
+					// 							className={`piece ${item.contains} ${item.color}`}
+					// 						></div>
+					// 					) : (
+					// 						<></>
+					// 					)}
+					// 				</div>
+					// 			)
+					// 		}
+					// 	} else {
+					// 		if (index % 2 !== 0) {
+					// 			return (
+					// 				<div
+					// 					key={index}
+					// 					className={`sq white`}
+					// 					id={`${item.position}`}
+					// 					onClick={() => {
+					// 						movePiece(item)
+					// 					}}
+					// 				>
+					// 					{/* <h1>
+					// 						{item.column}
+					// 						{item.line}
+					// 					</h1> */}
+					// 					{item.contains ? (
+					// 						<div
+					// 							className={`piece ${item.contains} ${item.color}`}
+					// 						></div>
+					// 					) : (
+					// 						<></>
+					// 					)}
+					// 				</div>
+					// 			)
+					// 		} else {
+					// 			return (
+					// 				<div
+					// 					key={index}
+					// 					className={`sq black`}
+					// 					id={`${item.position}`}
+					// 					onClick={() => {
+					// 						movePiece(item)
+					// 					}}
+					// 				>
+					// 					{/* <h1>
+					// 						{item.column}
+					// 						{item.line}
+					// 					</h1> */}
+					// 					{item.contains ? (
+					// 						<div
+					// 							className={`piece ${item.contains} ${item.color}`}
+					// 						></div>
+					// 					) : (
+					// 						<></>
+					// 					)}
+					// 				</div>
+					// 			)
+					// 		}
+					// 	}
+						
+					// })
 				) : (
 					<h1>Loading</h1>
 				)}
