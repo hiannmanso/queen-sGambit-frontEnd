@@ -5,7 +5,7 @@ import AuthContext from '../../Contexts/Auth.context.jsx'
 import * as s from './styles.jsx'
 import chessTable from './../../Assets/chess-gif.gif'
 import { Button, TextField } from '@mui/material'
-
+import { toast } from "react-toastify"
 export function SignUPComponent() {
 	const { url } = useContext(AuthContext)
 	const navigate = useNavigate()
@@ -17,6 +17,7 @@ export function SignUPComponent() {
 	})
 	async function loginAccount() {
 		console.log(infosInput)
+
 		console.log(url)
 		axios({
 			method: 'post',
@@ -28,7 +29,15 @@ export function SignUPComponent() {
 				navigate('/sign-in')
 			})
 			.catch((error) => {
-				console.log(error)
+				if(error.response.data[0].split(" ")[0].replace(/"|'/g, '')==='password'){
+					alert("Password need to have numbers.")
+				
+				}
+				else{
+					alert(error.response.data)
+
+				}
+				console.log(error.response.data[0].split(" ")[0].replace(/"|'/g, ''))
 			})
 	}
     

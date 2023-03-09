@@ -6,7 +6,7 @@ export const HeaderComponent = styled.div`
 	background-color: #ff6f9c;
 	position: fixed;
 	top: 0;
-	z-index: 10;
+	z-index: 2;
 	box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.2),
 		2px 6px 20px 2px rgba(0, 0, 0, 0.19);
 	color: white;

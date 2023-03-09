@@ -18,6 +18,7 @@ export default function App() {
 	return (
 		<>
 			<BrowserRouter>
+			
 				<AuthContext.Provider
 					value={{
 						url,
@@ -41,6 +42,7 @@ export default function App() {
 						<Route path='/sologame' element={<SoloGame />} />
 					</Routes>
 				</AuthContext.Provider>
+		
 			</BrowserRouter>
 		</>
 	)
