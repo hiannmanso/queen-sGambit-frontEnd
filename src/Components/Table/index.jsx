@@ -61,7 +61,7 @@ export function Table() {
 
 	useEffect(() => {
 		let contador = 0
-		for (let line = 8; line >= 1; --line) {
+		for (let line = 8; line >= 0; --line) {
 			for (let column = 0; column < columns.length; ++column) {
 				const sq = columns[column] + line
 
@@ -816,114 +816,114 @@ export function Table() {
 		<s.TableComponent>
 			<s.Table>
 				{table ? (
-					console.log(table)
-					// table.map((item, index) => {
-					// 	console.log(item,index)
-					// 	if (cont >= 8 ) {
-					// 		linePar = !linePar
-					// 		cont = 0
+					// console.log(table)
+					table.map((item, index) => {
+						console.log(item,index)
+						if (cont >= 8 ) {
+							linePar = !linePar
+							cont = 0
 						
-					// 	}
-					// 	cont++
-					// 	if (linePar) {
+						}
+						cont++
+						if (linePar) {
 						
-					// 		if (table.length >= 65) {
-					// 			table.pop()
-					// 		}
-					// 		if (index % 2 === 0) {
-					// 			return (
-					// 				<div
-					// 					key={index}
-					// 					className={`sq white`}
-					// 					id={`${item.position}`}
-					// 					onClick={() => {
-					// 						movePiece(item)
-					// 					}}
-					// 				>
-					// 					{item.contains ? (
-					// 						<div
-					// 							className={`piece ${item.contains} ${item.color}`}
-					// 						></div>
-					// 					) : (
-					// 						<></>
-					// 					)}
-					// 				</div>
-					// 			)
-					// 		} else {
-					// 			return (
-					// 				<div
-					// 					key={index}
-					// 					className={`sq black`}
-					// 					id={`${item.position}`}
-					// 					onClick={() => {
-					// 						movePiece(item)
-					// 					}}
-					// 				>
-					// 					{/* <h1>
-					// 						{item.column}
-					// 						{item.line}
-					// 					</h1> */}
-					// 					{item.contains ? (
-					// 						<div
-					// 							className={`piece ${item.contains} ${item.color}`}
-					// 						></div>
-					// 					) : (
-					// 						<></>
-					// 					)}
-					// 				</div>
-					// 			)
-					// 		}
-					// 	} else {
-					// 		if (index % 2 !== 0) {
-					// 			return (
-					// 				<div
-					// 					key={index}
-					// 					className={`sq white`}
-					// 					id={`${item.position}`}
-					// 					onClick={() => {
-					// 						movePiece(item)
-					// 					}}
-					// 				>
-					// 					{/* <h1>
-					// 						{item.column}
-					// 						{item.line}
-					// 					</h1> */}
-					// 					{item.contains ? (
-					// 						<div
-					// 							className={`piece ${item.contains} ${item.color}`}
-					// 						></div>
-					// 					) : (
-					// 						<></>
-					// 					)}
-					// 				</div>
-					// 			)
-					// 		} else {
-					// 			return (
-					// 				<div
-					// 					key={index}
-					// 					className={`sq black`}
-					// 					id={`${item.position}`}
-					// 					onClick={() => {
-					// 						movePiece(item)
-					// 					}}
-					// 				>
-					// 					{/* <h1>
-					// 						{item.column}
-					// 						{item.line}
-					// 					</h1> */}
-					// 					{item.contains ? (
-					// 						<div
-					// 							className={`piece ${item.contains} ${item.color}`}
-					// 						></div>
-					// 					) : (
-					// 						<></>
-					// 					)}
-					// 				</div>
-					// 			)
-					// 		}
-					// 	}
+							if (table.length >= 65) {
+								table.pop()
+							}
+							if (index % 2 === 0) {
+								return (
+									<div
+										key={index}
+										className={`sq white`}
+										id={`${item.position}`}
+										onClick={() => {
+											movePiece(item)
+										}}
+									>
+										{item.contains ? (
+											<div
+												className={`piece ${item.contains} ${item.color}`}
+											></div>
+										) : (
+											<></>
+										)}
+									</div>
+								)
+							} else {
+								return (
+									<div
+										key={index}
+										className={`sq black`}
+										id={`${item.position}`}
+										onClick={() => {
+											movePiece(item)
+										}}
+									>
+										{/* <h1>
+											{item.column}
+											{item.line}
+										</h1> */}
+										{item.contains ? (
+											<div
+												className={`piece ${item.contains} ${item.color}`}
+											></div>
+										) : (
+											<></>
+										)}
+									</div>
+								)
+							}
+						} else {
+							if (index % 2 !== 0) {
+								return (
+									<div
+										key={index}
+										className={`sq white`}
+										id={`${item.position}`}
+										onClick={() => {
+											movePiece(item)
+										}}
+									>
+										{/* <h1>
+											{item.column}
+											{item.line}
+										</h1> */}
+										{item.contains ? (
+											<div
+												className={`piece ${item.contains} ${item.color}`}
+											></div>
+										) : (
+											<></>
+										)}
+									</div>
+								)
+							} else {
+								return (
+									<div
+										key={index}
+										className={`sq black`}
+										id={`${item.position}`}
+										onClick={() => {
+											movePiece(item)
+										}}
+									>
+										{/* <h1>
+											{item.column}
+											{item.line}
+										</h1> */}
+										{item.contains ? (
+											<div
+												className={`piece ${item.contains} ${item.color}`}
+											></div>
+										) : (
+											<></>
+										)}
+									</div>
+								)
+							}
+						}
 						
-					// })
+					})
 				) : (
 					<h1>Loading</h1>
 				)}
