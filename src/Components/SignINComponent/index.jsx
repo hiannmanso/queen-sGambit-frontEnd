@@ -14,7 +14,7 @@ export function SignINComponent() {
 		password: '',
 	})
 	function loginAccount() {
-		
+		console.log(url)
 		axios({
 			method: 'post',
 			url: `${url}/signin`,

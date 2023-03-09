@@ -835,10 +835,6 @@ export function Table() {
 											movePiece(item)
 										}}
 									>
-										{/* <h1>
-											{item.column}
-											{item.line}
-										</h1> */}
 										{item.contains ? (
 											<div
 												className={`piece ${item.contains} ${item.color}`}
