@@ -10,7 +10,9 @@ export const TableComponent = styled.div`
 export const Table = styled.div`
 	width: 608px;
 	height: 608px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
+	border: 1px solid black;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const HeaderComponent = styled.div`
 	width: calc(100vw - 30px);
 	height: 100px;
-	background-color: #ff6f9c;
+	background-color:#9f496e;
 	position: fixed;
 	top: 0;
 	z-index: 2;
@@ -19,7 +19,7 @@ export const HeaderComponent = styled.div`
 		color: white;
 	}
 	h1 {
-		font-family: 'Alumni Sans Inline One', cursive;
+	
 		font-size: 50px;
 	}
 	padding: 0 15px 0 15px;
